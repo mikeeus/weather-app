@@ -4,8 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var weatherJs = require('./weather');
-var sass = require('node-sass');
+// var sass = require('node-sass');
 
 var routes = require('./routes/index');
 // var users = require('./routes/users');
@@ -24,13 +23,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // adding sass middleware
-app.use(
-  sass.middleware({
-    src: __dirname + '/sass',
-    dest: __dirname + '/public',
-    debug: true,
-  })
-);
+// app.use(
+//   sass.middleware({
+//     src: __dirname + '/sass',
+//     dest: __dirname + '/public',
+//     debug: true,
+//   })
+// );
 // the static middleware must come after the sass middleware
 app.use(express.static(path.join(__dirname, 'public')));
 
