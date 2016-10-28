@@ -34,7 +34,6 @@ function getWeather(lat, lon){
   $.ajax({
     url: apiUrl,
     success: function(result) {
-      console.log(result);
       
       country.innerHTML = getCountryName(result.sys.country);
       city.innerHTML = result.name;
@@ -53,7 +52,6 @@ function setCountryIcon(countryCode){
 }
 function setWeatherIcon(weather){
   kebabCase = convertToKebabCase(weather);
-  console.log('kebabCase: ', kebabCase);
   $("#weatherIcon").attr('src', '/images/' + kebabCase + '.png');
 }
 const convertToKebabCase = (string) => {
