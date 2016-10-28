@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Weather App</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.scss">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.css">
     <script type="text/javascript" 
@@ -11,28 +11,33 @@
   </head>
   <body>
     
+    <h1 class="text-center title">Simple Weather App</h1>
+
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 weather-icon">
         <img id="weatherIcon" src="/images/broken-clouds.png" alt="broken clouds">
       </div>
 
       <div class="col-sm-6">
-        <ul class="list-group">
-          <li class="list-group-item">
+        <ul class="list-group weather-details">
+          <li class="list-group-item country">
             <img id='countryFlag' src="" />
-            <span id="country">Country</span>
+            <h4 id="country">Please wait...<h4>
           </li>
-          <li id="city" class="list-group-item">
-            City
+          <li class="list-group-item">
+            <h5 id="city">...</h5>
           </li>
-          <li id="weather" class="list-group-item">
-            Weather
+          <li class="list-group-item">
+            <h5 id="weather">...</h5>
           </li>
-          <li id="temp" class="list-group-item">
-            Temperature
+          <li class="list-group-item">
+            <h5>
+              <span id="temp">...</span>
+              <a id="tempSymbol" href="#" onclick="changeTempFormat()"></a>
+            </h5>
           </li>
-          <li id="message" class="list-group-item">
-            Message
+          <li class="list-group-item">
+            <h5 id="message">...</h5>
           </li>
         </ul>
       </div>

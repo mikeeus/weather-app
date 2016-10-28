@@ -21,11 +21,11 @@ function showPosition(position) {
   posLon = position.coords.longitude;
   // temp.innerHTML = "Latitude: " + position.coords.latitude + 
     // "<br>Longitude: " + position.coords.longitude; 
-  message.innerHTML = "this";
+  message.innerHTML = "";
   getWeather(posLat, posLon);
 }
 function noPosition(position){
-  temp.innerHTML = "Unable to find location.";
+  message.innerHTML = "Unable to find location.";
   getWeather(this.defaultLat, this.defaultLon);
 }
 
@@ -40,6 +40,7 @@ function getWeather(lat, lon){
       city.innerHTML = result.name;
       weather.innerHTML = result.weather[0].description;
       temp.innerHTML = Math.round(result.main.temp - 273.15);
+      $("#tempSymbol").html("℃");
       
       setCountryIcon(result.sys.country);
       setWeatherIcon(result.weather[0].description);
@@ -58,6 +59,35 @@ function setWeatherIcon(weather){
 const convertToKebabCase = (string) => {
   return string.replace(/\s+/g, '-').toLowerCase();
 }
+// Convert degrees
+function changeTempFormat(){
+  value = temp.html();
+  symbol = $("#tempSymbol");
+  if (symbol == "°F"){
+    x = (value - 32) * 5 / 9;
+    temp.innerHTML = Math.round(x);
+    $("#tempSymbol").htl("℃");
+  } else if (symbol == "℃"){
+    x = value * 9 / 5 + 32;
+    temp.innerHTML = Math.round(x);
+    $("#tempSymbol").html("°F");    
+  }
+}
+function convert(degree) {
+    var x;
+    if (degree == "C") {
+        x = document.getElementById("c").value * 9 / 5 + 32;
+        document.getElementById("f").value = Math.round(x);
+    } else {
+        x = (document.getElementById("f").value -32) * 5 / 9;
+        document.getElementById("c").value = Math.round(x);
+    }
+}
+
+
+
+
+
 // Convert country codes
 var isoCountries = {
     'AF' : 'Afghanistan',

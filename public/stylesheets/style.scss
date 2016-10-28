@@ -1,0 +1,35 @@
+body {
+  padding: 50px;
+  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #00BCD4 !important;
+}
+// a {
+  // color: #00B7FF;
+// }
+.title{
+  color: white;
+  margin-top: 0;
+  padding-bottom: 30px;
+  font-size: 3em;
+}
+.weather-icon{
+  text-align: center;
+  padding: 30px;
+}
+@media(max-width: 767px){
+  .weather-icon{
+    padding-bottom: 50px;
+  }
+}
+@media(min-width: 768px){
+  .weather-icon{
+    padding-top: 110px;
+  }
+}
+.weather-details{
+  text-align: center
+}
+.list-group-item{
+  background: #37474F !important;
+  color: white;
+}
