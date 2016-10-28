@@ -30,7 +30,7 @@ function noPosition(position){
 }
 
 function getWeather(lat, lon){
-  apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=08a51b80f46b024f54ff029a6bfc9692"
+  apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=08a51b80f46b024f54ff029a6bfc9692"
   $.ajax({
     url: apiUrl,
     success: function(result) {
