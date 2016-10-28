@@ -1,7 +1,4 @@
 $(document).ready(function(){
-  var defaultLon = 114.0708;
-  var defaultLat = 51.0486;
-  
   // var city = $("#city");
   var temp = $("#temp");
   var weather = $("#weather");
@@ -22,15 +19,18 @@ function showPosition(position) {
   // temp.innerHTML = "Latitude: " + position.coords.latitude + 
     // "<br>Longitude: " + position.coords.longitude; 
   message.innerHTML = "";
-  getWeather(posLat, posLon);
+  getWeather(posLat, posLon); 
+
 }
 function noPosition(position){
-  message.innerHTML = "Unable to find location.";
-  getWeather(this.defaultLat, this.defaultLon);
+  defaultLon = 114.0708;
+  defaultLat = 51.0486;
+  message.innerHTML = "Unable to find your location, so here's Russia.";
+  getWeather(defaultLat, defaultLon);
 }
 
 function getWeather(lat, lon){
-  apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=08a51b80f46b024f54ff029a6bfc9692"
+  apiUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&APPID=08a51b80f46b024f54ff029a6bfc9692";
   $.ajax({
     url: apiUrl,
     success: function(result) {
