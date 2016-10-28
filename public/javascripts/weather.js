@@ -61,12 +61,12 @@ const convertToKebabCase = (string) => {
 }
 // Convert degrees
 function changeTempFormat(){
-  value = temp.html();
-  symbol = $("#tempSymbol");
+  value = $("#temp").html();
+  symbol = $("#tempSymbol").html();  
   if (symbol == "°F"){
     x = (value - 32) * 5 / 9;
     temp.innerHTML = Math.round(x);
-    $("#tempSymbol").htl("℃");
+    $("#tempSymbol").html("℃");
   } else if (symbol == "℃"){
     x = value * 9 / 5 + 32;
     temp.innerHTML = Math.round(x);
